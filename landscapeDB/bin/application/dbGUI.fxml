@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="227.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GUIController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar fx:id="menu">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem id="logout" mnemonicParsing="false" onAction="#logout" text="Log Out" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Search">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#displayAllCustomers" text="Display All Customers" />
+                        <SeparatorMenuItem disable="true" mnemonicParsing="false" visible="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#findPrice" text="Search Customer Price" />
+                        <MenuItem disable="true" mnemonicParsing="false" text="Display All Invoices" visible="false" />
+                        <SeparatorMenuItem disable="true" mnemonicParsing="false" visible="false" />
+                        <MenuItem disable="true" mnemonicParsing="false" text="Display landscapeDB" visible="false" />
+                        <MenuItem disable="true" mnemonicParsing="false" text="Custom Search..." visible="false" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Add">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Customer">
+                          <items>
+                          <MenuItem mnemonicParsing="false" onAction="#addCustomer" onMenuValidation="#addCustomer" text="New Customer" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#addAddress" onMenuValidation="#addAddress" text="Address" />
+                              <MenuItem mnemonicParsing="false" onAction="#addPhoneNumber" text="Phone Number" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#addInvoice" text="Invoice" />
+                              <MenuItem mnemonicParsing="false" onAction="#addCustomerService" text="Service" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#addService" text="Services" />
+                  </items>
+                </Menu>
+                <Menu disable="true" mnemonicParsing="false" text="Edit">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Cutomer">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#editCustomer" text="Name" />
+                          <MenuItem mnemonicParsing="false" text="Address" />
+                              <MenuItem mnemonicParsing="false" text="Phone Number" />
+                              <MenuItem mnemonicParsing="false" text="Invoice" />
+                              <MenuItem mnemonicParsing="false" text="Sevice" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Service">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Description" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <Label text="landscapeDB Version 1.0.6" BorderPane.alignment="BOTTOM_RIGHT" />
+   </bottom>
+   <center>
+      <TableView fx:id="table" prefHeight="267.0" prefWidth="301.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="first" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="second" prefWidth="75.0" text="First Name" />
+            <TableColumn fx:id="third" prefWidth="75.0" text="Last Name" />
+         </columns>
+      </TableView>
+   </center>
+</BorderPane>
